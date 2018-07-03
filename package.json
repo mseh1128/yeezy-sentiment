@@ -1,0 +1,28 @@
+{
+  "name": "yeezy",
+  "version": "1.0.0",
+  "description": "Sentiment news articles about Kanye West",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "datejs": "^1.0.0-rc3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "image-downloader": "^3.4.1",
+    "moment": "^2.22.2",
+    "mongoose": "^5.1.6",
+    "newsapi": "^2.2.2",
+    "npm": "^6.1.0",
+    "request": "^2.87.0",
+    "sentiment": "^5.0.1",
+    "unfluff": "^3.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
