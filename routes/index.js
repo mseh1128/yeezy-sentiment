@@ -30,7 +30,7 @@ router.get("/", function(req, res){
         //
         // console.log(result[0].articles[0].urlToImage);
 
-            res.render("landing", {articles: result[0].articles });
+            res.render("landing", {articles: result[0].articles, page_name: 'landing'});
         }
     });
 });

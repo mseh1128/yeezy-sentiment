@@ -2,27 +2,37 @@ const express             = require('express'),
       app                 = express(),
       db                  = require('./mongoose'),
       bodyParser          = require('body-parser'),
+      flash               = require('connect-flash'),
       Article             = require('./models/article'),
       Week                = require('./models/week'),
-      sentimentSymbols    = require('./lib/sentiment/sentiment')
+      sentimentSymbols    = require('./lib/sentiment/sentiment'),
+      cookieParser        = require('cookie-parser'),
+      session             = require('express-session');
 
 
 // requiring routes
 const articleRoutes    = require('./routes/articles'),
       weekRoutes       = require('./routes/weeks')
       indexRoutes      = require('./routes/index'),
-      faqRoutes        = require('./routes/faq');
+      faqRoute         = require('./routes/faq'),
+      contactRoute     = require('./routes/contact');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
+
+app.use(cookieParser('secret'));
+app.use(session({ cookie: { maxAge: 60000 }}));
+app.use(flash());
+
 app.locals.symbols = sentimentSymbols;
 setLocalRange(); // gg async method
 
 // add error handling middleware
 
 app.use('/', indexRoutes);
-app.use('/faq', faqRoutes);
+app.use('/faq', faqRoute);
+app.use('/contact', contactRoute);
 app.use('/weeks', weekRoutes);
 app.use('/articles', articleRoutes);
 

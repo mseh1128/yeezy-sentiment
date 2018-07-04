@@ -3,7 +3,7 @@ const router  = express.Router();
 
 // Increase count
 router.get("/", function(req, res){
-    res.render('faq');
+    res.render('faq', {page_name: 'faq'});
 });
 
 

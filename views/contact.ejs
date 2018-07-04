@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+
+<div class="container-contact">
+  <!-- Just out success.length > 0 & look at CSS/HTML -->
+  <% if(success && success.length > 0) {%>
+    <div class="alert alert-success" id="alert-contact" role="alert">
+      <%= success %>
+    </div>
+  <% } %>
+  <form id="contact" action="/contact" method="post">
+    <h3>Sentiment Contact Form</h3>
+    <h4>Feel free to leave any criticism/praise below!</h4>
+    <fieldset>
+      <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Your Email Address" type="email" tabindex="2" required>
+    </fieldset>
+    <fieldset>
+      <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+    <p class="copyright">Designed by <a href="https://colorlib.com" target="_blank" title="Colorlib">Colorlib</a>
+        <p class="copyright" id="modified">Modified heavily by me</p></p>
+  </form>
+</div>
+
+<% include partials/footer %>
+

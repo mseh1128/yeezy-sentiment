@@ -1,48 +1,93 @@
 <% include partials/header %>
 
 <div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header" id="headingOne">
+  <div class="faq-header">
+    <p id="questions" class="text-info">Frequently Asked Questions</p>
+    <button type="button" id="faq-btn" class="btn btn-primary">Toggle All FAQs</button>
+  </div>
+
+
+<div class="card rounded">
+    <div class="card-header bg-dark rounded rounded" id="headingOne">
       <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </button>
+        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          What is 'Kanye West Sentiment News'?
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        'Kanye West Sentiment News' is a website/API which displays a collection of Kanye-related news articles with their associated AFINN-based sentiment values. It does this by collecting data from the NewsAPI, cleaning it, analyzing the sentiment of associated news articles, and so much more.
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingTwo">
+
+
+  <div class="card rounded">
+    <div class="card-header bg-dark rounded rounded" id="headingTwo">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </button>
+        <button class="btn btn-link text-white" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          Why waste valuable sentiment on Kanye West?
       </h5>
     </div>
-    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-      <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+      <div class="card-body" id="cbody-2">
+        Why not? Despite his infamous reputation as egotistical and arrogant, Ye has made some of the greatest music of our time and is, by many, considered a musical genius. Let us not forget albums such as MBDTF, Graduation, and KDS. A visionary that constantly pushes the boundaries of music and dares to explore new sounds, it would be surprising if I didn't make this.
+        <p id="controversy">Also the level of controversial surrounding Ye makes for somewhat worthwhile sentiment analysis.<p>
       </div>
     </div>
   </div>
-  <div class="card">
-    <div class="card-header" id="headingThree">
+
+
+  <div class="card rounded">
+    <div class="card-header bg-dark rounded" id="headingThree">
       <h5 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
+        <button class="btn btn-link text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Can this concept be expanded to other search terms?
         </button>
       </h5>
     </div>
-    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        Yes. All you would have to do is alter a configuration file containing the search term, number of results each week, number of weeks, and the URI to a database. After this, you would simply run the included 'news' script and the rest of the heavy lifting will be done for you. Isn't modular code so nice?
+
       </div>
     </div>
+  </div>
+  <div class="card rounded">
+    <div class="card-header bg-dark rounded" id="headingFour">
+      <h5 class="mb-0">
+        <button class="btn btn-link text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+           What technologies were harmed during the making of this website?
+        </button>
+      </h5>
+    </div>
+    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour">
+      <div class="card-body">
+        <div>
+          <h3 class="header-ans" id="short-ans">Short Answer:</h3>
+          <div class="ans">
+            <p>Technologies: HTML, CSS, Bootstrap, JS, Node, Express, Mongo</p>
+            <p>Libraries: Sentiment, newsAPI, request, extractor, unfluff, moment, etc.</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="header-ans" id="long-ans">Long Answer:</h3>
+          <div class="ans">
+            <p>RIP Web Development. This is my first website after all.</p>
+          </div>
+        </div>
+
+<!--         <div>
+         Long answer: RIP Web Development. This is my first website after all.
+        </div> -->
+
+
+      </div>
+    </div>
+
+
   </div>
 </div>
 
