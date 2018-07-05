@@ -1,5 +1,5 @@
 
-$('.container-contact').has('#alert-contact').css({'margin': '80px auto'});
+$('.container-contact').has('.alert-contact').css({'margin': '80px auto'});
 
 $(function() {
 
