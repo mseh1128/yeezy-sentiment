@@ -61,17 +61,17 @@
                     </select>
                 </div>
             </div>
+
             <div class="col-md-2 selector">
                 <div class="chart-filters">
                     <select id="weeks" class="custom-select">
                       <% range.forEach(function(week) { %>
-                        <option value="<%=week%>"><%=week%></option>
-                     <% }) %>
-
-
-                     <!--  <option selected value="1">06/08/18</option>
-                      <option value="2">Dynamic</option>
-                      <option value="3">Dynamic</option> -->
+                         <% if(week_name === week) { %>
+                            <option selected value="<%=week%>"><%=week%></option>
+                         <% } else { %>
+                            <option value="<%=week%>"><%=week%></option>
+                          <% } %>
+                     <% }); %>
                     </select>
                 </div>
             </div>
