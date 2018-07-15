@@ -3,7 +3,7 @@ let config = {};
 config.newsApi = {
   searchTerm: "Kanye West",
   numOfResults: 100, // newsAPI has max of 100, default of 20
-  numOfWeeks: 10,
+  numOfWeeks: 10, // upper limit
   uri: "mongodb://localhost/yeezy"
 }
 
