@@ -1,3 +1,6 @@
+# NewsAPIKey
+lib/secret.js
+
 # Logs
 logs
 *.log
