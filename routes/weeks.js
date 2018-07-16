@@ -10,8 +10,58 @@ router.use(function (req, res, next) {
   next()
 }); // prevents incorrect viewCount display when going back, not working w/ chrome cache
 
+
+router.get(`/:name/:filter/:filterBy`, function(req, res) {
+    const week_name = req.params.name;
+    const filter = req.params.filter;
+    const filterBy = req.params.filterBy;
+    Week.find({name: week_name}).populate("articles").exec(function(err, result) {
+        if(err) {
+            res.send("something went")
+        } else {
+            const cleanedFilter = cleanFilter(filter);
+            const sortedArticles = filterOptions(cleanedFilter, filterBy, result[0].articles);
+            res.render("landing", {articles: sortedArticles, page_name: 'landing', 
+                               week_name: week_name});
+        }       
+        })
+    });
+
+router.get("/:name/view", function(req, res) {
+    const week_name = req.params.name;
+    Week.find({name: week_name}).populate("articles").exec(function(err, result) {
+        if(err) {
+            res.send("something went")
+        } else {
+            const sortedArticles = filterOptions('viewCount', 'descending', result[0].articles)
+            res.render("landing", {articles: sortedArticles, page_name: 'landing', 
+                                    week_name: week_name});
+        }
+    });
+});
+
+
+function cleanFilter(filter) {
+    if(filter === 'score') {
+        return 'sentimentScore';
+    } else { // filter is comparative
+        return 'sentimentComparative';
+    }
+}
+
+function filterOptions(filter, by, articles) {
+    // filter, week, what to sort by
+    if(by === "ascending") {
+        return articles.sort((a, b) => a[filter] - b[filter]);
+    } else { //descending
+        return articles.sort((a, b) => b[filter] - a[filter]);
+    }
+} 
+
+
+
 router.get("/:name", function(req, res){
-    var week_name = req.params.name;
+    const week_name = req.params.name;
     // Get all articles from DB
     // mongoose error checking
     Week.find({name: week_name}).populate("articles").exec(function(err, result) {
