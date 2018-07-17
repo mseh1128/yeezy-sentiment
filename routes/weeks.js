@@ -22,7 +22,7 @@ router.get(`/:name/:filter/:filterBy`, function(req, res) {
             const cleanedFilter = cleanFilter(filter);
             const sortedArticles = filterOptions(cleanedFilter, filterBy, result[0].articles);
             res.render("landing", {articles: sortedArticles, page_name: 'landing', 
-                               week_name: week_name});
+                               activeWeek: week_name});
         }       
         })
     });
@@ -35,7 +35,7 @@ router.get("/:name/view", function(req, res) {
         } else {
             const sortedArticles = filterOptions('viewCount', 'descending', result[0].articles)
             res.render("landing", {articles: sortedArticles, page_name: 'landing', 
-                                    week_name: week_name});
+                                    activeWeek: week_name});
         }
     });
 });
@@ -69,7 +69,7 @@ router.get("/:name", function(req, res){
             res.send("something went")
         } else {
             res.render("landing", {articles: result[0].articles, page_name: 'landing', 
-                                    week_name: week_name});
+                                    activeWeek: week_name});
         }
     });
 });

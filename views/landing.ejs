@@ -53,11 +53,12 @@
             </div>
             <div class="col-md-2 selector">
                 <div class="chart-filters">
-                    <select class="custom-select">
-                      <option selected>Polarity (Increasing)</option>
-                      <option value="1">Polarity (Increasing)</option>
-                      <option value="2">Other?</option>
-                      <option value="3">Other?</option>
+                    <select id="filter" class="custom-select">
+                      <option value="score-asc">Score (Ascending)</option>
+                      <option value="score-des">Score (Descending)</option>
+                      <option value="comparative-asc">Comparative (Ascending)</option>
+                      <option value="comparative-des">Comparative (Descending)</option>
+                      <option value="view">Views (Descending)</option>
                     </select>
                 </div>
             </div>
@@ -66,7 +67,7 @@
                 <div class="chart-filters">
                     <select id="weeks" class="custom-select">
                       <% range.forEach(function(week) { %>
-                         <% if(week_name === week) { %>
+                         <% if(activeWeek === week) { %>
                             <option selected value="<%=week%>"><%=week%></option>
                          <% } else { %>
                             <option value="<%=week%>"><%=week%></option>
